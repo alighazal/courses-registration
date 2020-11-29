@@ -118,7 +118,7 @@ function DepartmentCourse (props){
 
               setCoursesDetails((state) => [...state, formatCourse(response.data, props.studentHistoryID) ])
 
-              //console.log(formatCourse(response.data, props.studentHistoryID))
+              console.log( props.studentHistoryID)
               //cd.push(formatCourse(response.data, props.studentHistoryID));
               //console.log(formatCourse(response.data, props.studentHistoryID));  
               //setCoursesDetails(cd) 
@@ -208,8 +208,8 @@ function DepartmentCourse (props){
             }
             
 
-            //console.log(courseRAW);
-            //console.log( course)
+            console.log(courseID);
+            console.log(courseHistory);
             
         return course;
     } 

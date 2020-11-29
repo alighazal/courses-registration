@@ -2,6 +2,8 @@ import React, { useEffect, useState }  from 'react';
 import axios from 'axios';
 import {Link, useLocation, withRouter} from 'react-router-dom';
 
+import {Badge} from 'reactstrap';
+
 import ViewCourseReview from '../CourseReview/ViewCourseReviews';
 
 
@@ -28,8 +30,8 @@ function Course(props){
 
         async function fetchdata() {
             const result =  await axios.get(` /api/departments/${props.match.params.id}/${props.match.params.course}`) 
-            setCourse(formatCourse (result.data, props.studentHistory ));
-            console.log( formatCourse (result.data, props.studentHistory ))
+            setCourse(formatCourse (result.data, props.studentHistoryID ));
+            console.log( formatCourse (result.data, props.studentHistoryID ))
         }
 
         fetchdata()
@@ -137,10 +139,10 @@ function Course(props){
             course.Prerequisites.map( cp => (
                 <div key={`${cp.Department}${cp.CourseNumber}`}>
                     <Link to = {`/departments/${cp.Department}/${cp.CourseNumber}`}> 
-                    
-                        <p>{cp.Department} -- {cp.CourseNumber}</p> 
+                        <span>{cp.Department} -- {cp.CourseNumber} --</span> 
                     </Link>
-                    <p>{cp.Concurrency}</p>
+                    <p>{(cp.Concurrency)? "can be concurrent" : " can't be concurrent" }</p>
+                    
                 </div>
 
             
@@ -170,13 +172,13 @@ function Course(props){
         }
 
         {
-            (coursesDetails[index].needPrerequisite)?
+            (course.needPrerequisite)?
             <p><Badge color="danger"> Needs Prerequisites</Badge></p> : null
             
         }
 
         { 
-            (coursesDetails[index].taken) ? 
+            (course.taken) ? 
                 <p><Badge color="dark"> taken</Badge></p>
                 :<p><Badge color="primary"> not taken</Badge></p>
             
@@ -184,7 +186,7 @@ function Course(props){
 
         {
         
-        (!coursesDetails[index].taken && !coursesDetails[index].needPrerequisite) ?
+        (!course.taken && !course.needPrerequisite) ?
         <p><Badge color="success"> available</Badge></p>
         : null
             

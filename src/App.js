@@ -61,8 +61,8 @@ function App() {
 
 
   useEffect (
-    ()=> {
-        axios.get(" /api/mycourses",{
+    async ()=> {
+        await axios.get(" /api/mycourses",{
             params: {
                 id: "900171722"
             }
@@ -70,19 +70,21 @@ function App() {
             console.log(response.data);
             setStudentHistory(response.data);
 
-            for(var i = 0; i < response.data.length; i++ ) {
-
+            for(const course of response.data ) {
+              console.log((course.department 
+                + '-' + course.coursenumber).toString());
+              /*   (state) => [...state, (response.data[i].department + '-' + response.data[i].coursenumber).toString()])
+                 */
               setStudentHistoryID( 
-                ( state) => 
-                ([...state,
-                   (response.data[i].department 
-                    + '-' + response.data[i].courseNumber).toString()]));
+                (state) => [...state,
+                   (course.department 
+                    + '-' + course.coursenumber).toString()]);
 
             }
         })      
   }, [])
 
-  useEffect (
+    useEffect (
     ()=> {
         axios.get(" /api/student",{
             params: {
@@ -99,6 +101,10 @@ function App() {
   useEffect ( () => {
     console.log(student)
   },[student])
+
+  useEffect ( () => {
+    console.log(studentHistoryID)
+  },[studentHistoryID])
 
   return (
       <HashRouter>
@@ -158,7 +164,7 @@ function App() {
               <DepartmentCourses studentHistoryID ={ studentHistoryID} />
             </Route>
             <Route  path="/departments/:id/:course" >
-              <Course studentHistory = {studentHistory} />
+              <Course studentHistoryID = {studentHistoryID} />
             </Route>
           </Switch>
 
