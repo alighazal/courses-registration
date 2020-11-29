@@ -29,7 +29,6 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -111,19 +110,21 @@ function App() {
             <Nav className="mr-auto" navbar>
 
             <NavItem>
-              <NavLink href="/"> Home</NavLink>
+              
+              <Link to="/"> Home</Link>
             </NavItem>
 
             <NavItem>
-              <NavLink href="/about"> About</NavLink>
+              
+              <Link to="/about"> About</Link>
             </NavItem>
 
             <NavItem>
-              <NavLink href="/history/">History</NavLink>
+              <Link to="/history/">History</Link>
             </NavItem>
 
             <NavItem>
-              <NavLink href="/departments/">Explore</NavLink>
+              <Link to="/departments/">Explore</Link>
             </NavItem>
             
           </Nav>
