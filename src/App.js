@@ -75,8 +75,8 @@ function App() {
               setStudentHistoryID( 
                 ( state) => 
                 ([...state,
-                   (response.data[i].Department 
-                    + '-' + response.data[i].CourseNumber).toString()]));
+                   (response.data[i].department 
+                    + '-' + response.data[i].courseNumber).toString()]));
 
             }
         })      
@@ -101,7 +101,7 @@ function App() {
   },[student])
 
   return (
-      <Router>
+      <HashRouter>
         <div className="App">
 
 
@@ -165,7 +165,7 @@ function App() {
 
           
         </div>
-      </Router>
+      </HashRouter>
    
   );
 }

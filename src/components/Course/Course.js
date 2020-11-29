@@ -169,6 +169,28 @@ function Course(props){
             <span key={`${s}`}> {s} </span>)):null
         }
 
+        {
+            (coursesDetails[index].needPrerequisite)?
+            <p><Badge color="danger"> Needs Prerequisites</Badge></p> : null
+            
+        }
+
+        { 
+            (coursesDetails[index].taken) ? 
+                <p><Badge color="dark"> taken</Badge></p>
+                :<p><Badge color="primary"> not taken</Badge></p>
+            
+        }
+
+        {
+        
+        (!coursesDetails[index].taken && !coursesDetails[index].needPrerequisite) ?
+        <p><Badge color="success"> available</Badge></p>
+        : null
+            
+        }
+
+
         <hr />
 
         <ViewCourseReview 
