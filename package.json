@@ -27,6 +27,7 @@
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "start-local": "react-scripts start",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -48,5 +49,4 @@
     ]
   },
   "proxy": "http://localhost:5000"
-  
 }

@@ -111,24 +111,24 @@ function App() {
 
             <NavItem>
               
-              <Link to="/"> Home</Link>
+              <Link style={{ textDecoration: 'none', margin: 5 }} to="/"> Home</Link>
             </NavItem>
 
             <NavItem>
               
-              <Link to="/about"> About</Link>
+              <Link style={{ textDecoration: 'none', margin: 5 }} to="/about"> About</Link>
             </NavItem>
 
             <NavItem>
-              <Link to="/history/">History</Link>
+              <Link  style={{ textDecoration: 'none', margin: 5 }} to="/history/">History</Link>
             </NavItem>
 
             <NavItem>
-              <Link to="/departments/">Explore</Link>
+              <Link style={{ textDecoration: 'none', margin: 5 }} to="/departments/">Explore</Link>
             </NavItem>
             
           </Nav>
-          <NavbarText>Made with love</NavbarText>
+          <NavbarText>Made with &hearts; in Alexandira</NavbarText>
 
       </Navbar>
 

@@ -21,7 +21,7 @@ function AddCourses (props){
         
         <div>        
             <div>
-                <button onClick={()=> setIsOpen( (state) => (!state))}>ADD COURSES</button>
+                <Button onClick={()=> setIsOpen( (state) => (!state))}>ADD COURSES</Button>
                 <Modal
                 isOpen={isOpen}
                 style={customStyles}

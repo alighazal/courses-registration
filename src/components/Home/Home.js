@@ -17,7 +17,7 @@ function Home (props){
 
             <hr/>
 
-            <AddCourses student = {props.student}/>
+            {/* <AddCourses student = {props.student}/> */}
 
         </div>   
     

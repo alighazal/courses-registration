@@ -21,7 +21,7 @@ function Department (props) {
     
     <div>
 
-      <h1>Hello, {props.name}</h1>
+      <h1>All Courses</h1>
 
       {
         departments.map(
