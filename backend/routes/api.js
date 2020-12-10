@@ -16,7 +16,9 @@ const router = express.Router();
     console.log('Connected to the MySQL server.');
 }); */
 const client = new Client({
-    connectionString: "postgres://omnswgtkpjazzy:10c065cf840be5e302d66b4a6e1dcdd43f92fbeece0751b1e38b9990afd3fc98@ec2-54-225-214-37.compute-1.amazonaws.com:5432/das6cgi07fpjd0",
+
+    //add your postgres connection string here
+    connectionString: "",
     ssl: {
       rejectUnauthorized: false
     }
